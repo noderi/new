@@ -1,0 +1,28 @@
+{
+  "name": "licensebot",
+  "version": "1.0.3",
+  "description": "A discord licensing bot",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint"
+  },
+  "author": "Quantum#6014",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "graphql": "^15.1.0",
+    "json5": "^2.1.3",
+    "ms": "^2.1.3",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.0"
+  }
+}

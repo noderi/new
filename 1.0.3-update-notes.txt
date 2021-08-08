@@ -1,0 +1,17 @@
+LicenseBot Update 1.0.3
+
++ Added Customisable messages
++ Added User owned license keys
++ Added listlicenses [user id] - List of licenses owned (by user (admin only))
++ Added setowner <user id> - Set owner of a license keys
++ Added interval database pinging to prevent timeout
++ All messages are now embedded
++ Customisable generation/format of keys
++ Help command
+/ keyinfo gives owner of specified license key
+/ All database queries are now parameterised
+
+What will be worked on in next update:
++ More failsafes
++ API Admin Paths (To maybe integrate with shops?)
++ idk

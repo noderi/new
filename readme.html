@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LicenseBot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #1d1d1d;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+            background: linear-gradient(90deg, rgba(23, 200, 189, 1) 0%, rgba(63, 32, 217, 1) 100%);
+            border: 1px black;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            background: white;
+        }
+
+        #instruction-list li {
+            padding-bottom: 10px;
+        }
+
+        article {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        article p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        article ol {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .container {
+            width: 75%;
+            float: right;
+        }
+
+        .navbar {
+            float: left;
+            padding-right: 15px;
+            padding-left: 15px;
+            background: linear-gradient(90deg, rgba(23, 200, 189, 1) 0%, rgba(63, 32, 217, 1) 100%);
+            width: 23%;
+            margin: 0 auto;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .navbar ul li {
+            margin: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .navbar ul :hover {
+            background-color: #1d1d1d;
+        }
+
+        .navbar ul :link {
+            text-decoration: none;
+        }
+
+        .navbar ul :active {
+            background-color: #1d1d1d;
+        }
+
+        .navbar ul :visited {
+            background-color: #1d1d1d;
+        }
+
+        #active {
+            background-color: #1d1d1d;
+            color: white;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 20px;
+            width: 63%;
+        }
+
+        .sticky+.main-wrapper {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>LicenseBot Guide</h1>
+    </header>
+    <div class="main-wrapper">
+        <aside>
+            <nav class="navbar">
+                <ul>
+                    <a href="#intro">
+                        <li>Introduction</li>
+                    </a>
+                    <a href="#installation">
+                        <li>Installation</li>
+                    </a>
+                    <a href="#upgrading">
+                        <li>Upgrading</li>
+                    </a>
+                </ul>
+            </nav>
+        </aside>
+        <div class="container">
+            <article id="intro">
+                <h2>Introduction</h2>
+                <hr />
+                <p>Hello. Thank you for buying LicenseBot, the #1 solution to your anti piracy needs. This readme file
+                    contains all the information you need to know about your version of LicenseBot. Remember, if you
+                    have any trouble, please do not hesitate to message me on discord. My tag is Quantum#6014. I try to
+                    respond to any support questions within 24 hours if I am offline. Otherwise a few minutes when I am
+                    online.</p>
+            </article>
+            <article id="Installation">
+                <h2>Installation</h2>
+                <hr />
+                <ol class="instruction-list">
+                    <li>Download LicenseBot</li>
+                    <li>Unzip it to your desired location/folder</li>
+                    <li>Fill in <code>config/config.json</code> to your likings with a text editor.</li>
+                    <li>Install the dependencies. Run <code>npm install --only=production</code></li>
+                    <li>Done! To start the bot, run <code>npm start</code></li>
+                </ol>
+            </article>
+
+            <article id="upgrading">
+                <h2>Upgrading</h2>
+                <hr />
+                <ol class="instruction-list">
+                    <li>Download the new version</li>
+                    <li>Back up your database and <code>config/config.json</code></li>
+                    <li>Extract the files into your bot directory</li>
+                    <li>Fill in your new <code>config/config.json</code> to your likings.
+                        <strong>Make sure <code>dbinit</code> is set to <code>true</code>!</strong></li>
+                    <li>Delete folder <code>node_modules</code> and file <code>package-lock.json</code></li>
+                    <li>Run <code>npm install</code> to install/update the dependencies</li>
+                    <li>Execute the file <code>LicenseBot.sql</code> in your database</li>
+                    <li>Set <code>dbinit</code> in <code>config/config.json</code> to <code>true</code> (ONLY IF YOU ARE UPGRADING)</li>
+                    <li>Done. Run <code>npm start</code> to start the bot!</li>
+                </ol>
+            </article>
+        </div>
+    </div>
+    <script>
+        window.onscroll = function () {
+            stickyNavbar();
+        };
+
+        let nav = document.getElementsByTagName("aside")[0]
+
+        let sticky = nav.offsetTop;
+
+        function stickyNavbar() {
+            if (window.pageYOffset >= sticky) {
+                nav.classList.add("sticky")
+            } else {
+                nav.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+
+</html>

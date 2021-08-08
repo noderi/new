@@ -1,0 +1,1 @@
+alter table licenses add column `owner` varchar(30) NOT NULL;
